@@ -1,8 +1,20 @@
 # 📋 项目清单 - Project Index
 
 > 创建时间：2026-03-10 08:26  
-> 最后更新：2026-03-10 08:26  
+> 最后更新：2026-03-10 08:45 (Git 仓库配置完成)  
 > 用途：统一项目编号，便于沟通和追踪
+
+---
+
+## 🔗 Git 仓库总览
+
+| 编号 | 项目 | GitHub 仓库 |
+|------|------|-------------|
+| **A-001** | 主工作空间能力系统 | https://github.com/ANKCHEN2024/openclaw-workspace |
+| **P-001** | AI 短剧平台 | https://github.com/ANKCHEN2024/ai-drama-platform |
+| **T-001** | 短视频培训 L1 | https://github.com/ANKCHEN2024/short-video-training-l1 |
+| **TR-002** | 黄金交易回测系统 | https://github.com/ANKCHEN2024/gold-trading-backtest |
+| **R-001** | 数字孪生 AI MVP | https://github.com/ANKCHEN2024/digital-twin-ai-mvp |
 
 ---
 
@@ -33,11 +45,12 @@
 ## 🤖 AI 能力项目 (A-001 ~ A-099)
 
 ### A-001: 主工作空间能力系统 (workspace)
-- **状态**: 🟢 已提交 (commit 1655174)
+- **状态**: 🟢 已推送 (Initial commit)
 - **优先级**: P0
+- **GitHub**: https://github.com/ANKCHEN2024/openclaw-workspace
 - **描述**: RAG 系统 + 自动进化 + 技能矩阵
-- **最新提交**: 1655174 - 大规模能力扩展
-- **待办**: 4 个大文件重构 (>500 行)
+- **最新提交**: Initial commit - 项目编号系统 + 代码重构完成
+- **待办**: 代码重构已完成 (4→22 个模块)
 
 ### A-002: 技能管理系统 (skills)
 - **状态**: 🟢 健康 (20/20)
@@ -56,8 +69,9 @@
 ## 📚 培训产品项目 (T-001 ~ T-099)
 
 ### T-001: 短视频培训 L1 课程 (video-training-L1)
-- **状态**: 🟢 100% 完成 (8/8 节)
+- **状态**: 🟢 100% 完成，已推送
 - **优先级**: P0
+- **GitHub**: https://github.com/ANKCHEN2024/short-video-training-l1
 - **预期收益**: ¥160,000 - ¥499,000
 - **ROI**: 90%+
 - **交付物**:
@@ -88,8 +102,9 @@
 - **下一步**: 参数优化 (基于 2025-2026 最新数据)
 
 ### TR-002: 交易回测系统 (trading-backtest)
-- **状态**: 🟢 已完成
+- **状态**: 🟢 已完成，已推送
 - **优先级**: P1
+- **GitHub**: https://github.com/ANKCHEN2024/gold-trading-backtest
 - **描述**: Python 外汇黄金交易回测引擎
 - **功能**: 多策略回测、参数优化、性能分析、可视化
 - **下一步**: MT5 API 集成 → 实盘对接
@@ -165,8 +180,9 @@
 ## 🔬 研究/提案项目 (R-001 ~ R-099)
 
 ### R-001: 数字孪生 AI MVP (digital-twin-ai-mvp)
-- **状态**: 🟡 方案完成，等待决策
+- **状态**: 🟡 方案完成，已推送，等待决策
 - **优先级**: P0
+- **GitHub**: https://github.com/ANKCHEN2024/digital-twin-ai-mvp
 - **预算**: ¥50 万 (8 周)
 - **预期 ROI**: 1027%
 - **交付物**:
