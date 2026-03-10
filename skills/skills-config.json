@@ -1,0 +1,22 @@
+{
+  "skills": [
+    {"name": "weather", "version": "latest", "autoUpdate": true, "source": "github"},
+    {"name": "video-frames", "version": "latest", "autoUpdate": true, "source": "github"},
+    {"name": "healthcheck", "version": "latest", "autoUpdate": true, "source": "github"},
+    {"name": "skill-creator", "version": "latest", "autoUpdate": true, "source": "github"}
+  ],
+  "localSkills": {
+    "enabled": true,
+    "directory": "./skills"
+  },
+  "autoUpdate": true,
+  "healthCheckEnabled": true,
+  "healthCheckSchedule": "daily",
+  "lastUpdated": "2026-03-07T16:10:15Z",
+  "lastHealthCheck": null,
+  "installationSource": {
+    "primary": "github",
+    "fallback": "clawhub",
+    "validationEnabled": true
+  }
+}

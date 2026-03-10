@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "skills": {
+    "video-frames": {
+      "version": "1.0.0",
+      "installedAt": 1772870649546
+    },
+    "healthcheck": {
+      "version": "1.0.2",
+      "installedAt": 1772870655117
+    },
+    "skill-creator": {
+      "version": "0.1.0",
+      "installedAt": 1772870656975
+    },
+    "evomap": {
+      "version": "1.0.0",
+      "installedAt": 1772903701714
+    },
+    "tavily-search-secure": {
+      "version": "1.0.0",
+      "installedAt": 1772904566358
+    },
+    "memory-setup": {
+      "version": "1.0.0",
+      "installedAt": 1772904782620
+    },
+    "skill-scanner": {
+      "version": "0.1.2",
+      "installedAt": 1772904855230
+    },
+    "self-improving": {
+      "version": "1.2.10",
+      "installedAt": 1772906044127
+    },
+    "capability-evolver": {
+      "version": "1.27.3",
+      "installedAt": 1772906054068
+    },
+    "video-subtitles": {
+      "version": "1.0.0",
+      "installedAt": 1773016587195
+    },
+    "ai-video-script": {
+      "version": "1.0.0",
+      "installedAt": 1773016590930
+    },
+    "douyin-video-fetch": {
+      "version": "1.0.0",
+      "installedAt": 1773016601512
+    },
+    "bilibili-subtitle-download-skill": {
+      "version": "1.0.0",
+      "installedAt": 1773016607582
+    },
+    "short-video-creator": {
+      "version": "1.0.0",
+      "installedAt": 1773016628495
+    },
+    "tiktok-video-analyzer": {
+      "version": "1.0.0",
+      "installedAt": 1773016633677
+    },
+    "video-edit": {
+      "version": "1.0.0",
+      "installedAt": 1773016647297
+    },
+    "ai-video-editor": {
+      "version": "1.0.3",
+      "installedAt": 1773016653165
+    },
+    "save-douyin-video-to-feishu-drive": {
+      "version": "1.0.0",
+      "installedAt": 1773016659022
+    }
+  }
+}

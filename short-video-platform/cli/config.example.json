@@ -1,0 +1,6 @@
+{
+  "apiKey": "YOUR_API_KEY_HERE",
+  "apiSecret": "YOUR_API_SECRET_HERE",
+  "baseUrl": "https://api.shortvideo.com",
+  "provider": "default"
+}

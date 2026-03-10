@@ -1,0 +1,14 @@
+# 视频处理模块依赖
+# 核心依赖：ffmpeg (需单独安装)
+
+# Python 标准库已满足大部分需求
+# 可选：用于更高级的处理
+# opencv-python>=4.8.0
+# numpy>=1.24.0
+# pillow>=10.0.0
+
+# 注意：本模块主要使用 ffmpeg 命令行工具
+# 确保系统已安装 ffmpeg:
+# macOS: brew install ffmpeg
+# Ubuntu: sudo apt install ffmpeg
+# Windows: 从 https://ffmpeg.org 下载

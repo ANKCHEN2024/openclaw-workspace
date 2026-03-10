@@ -1,0 +1,42 @@
+{
+  "whitelist": [
+    "self-improving-agent",
+    "skill-creator",
+    "weather",
+    "summarize",
+    "agent-browser",
+    "github",
+    "proactive-agent",
+    "sonoscli",
+    "obsidian",
+    "nano-pdf",
+    "humanizer",
+    "openai-whisper",
+    "youtube-transcript",
+    "brave-search",
+    "auto-updater",
+    "byte-rover",
+    "mcporter",
+    "openclaw-youtube-transcript",
+    "humanize-ai-text",
+    "free-ride"
+  ],
+  "blacklist": [
+    "tavily-search",
+    "gog",
+    "notion",
+    "nano-banana-pro",
+    "api-gateway",
+    "find-skills",
+    "aisa-search"
+  ],
+  "description": {
+    "tavily-search": "需要 TAVILY_API_KEY",
+    "gog": "需要 Google OAuth 配置",
+    "notion": "需要 NOTION_API_KEY",
+    "nano-banana-pro": "需要 API 密钥",
+    "api-gateway": "需要各种 API 密钥",
+    "find-skills": "需要配合其他工具使用",
+    "aisa-search": "需要 API 密钥"
+  }
+}

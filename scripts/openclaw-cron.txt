@@ -1,0 +1,11 @@
+# OpenClaw 文档维护任务
+# 由 cron-setup.sh 创建 - 2026-03-07
+
+# 文档关联检查（每天 03:00）
+0 3 * * * cd /Users/chenggl/workspace && ./scripts/sync-docs-links.sh >> logs/cron-sync.log 2>&1
+
+# 文档自动修复（每天 03:05）
+5 3 * * * cd /Users/chenggl/workspace && ./scripts/auto-fix-docs.sh >> logs/cron-fix.log 2>&1
+
+# 周报告（每周日 23:00）
+0 23 * * 0 cd /Users/chenggl/workspace && ./scripts/weekly-report.sh >> logs/cron-weekly.log 2>&1

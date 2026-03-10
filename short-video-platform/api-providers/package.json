@@ -1,0 +1,30 @@
+{
+  "name": "short-video-api-providers",
+  "version": "1.0.0",
+  "description": "国内 API 提供商集成 - 支持 8 家国内视频生成平台",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "test": "ts-node examples/usage-examples.ts"
+  },
+  "keywords": [
+    "video-generation",
+    "ai",
+    "api",
+    "domestic",
+    "china"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0",
+    "ts-node": "^10.9.2"
+  }
+}

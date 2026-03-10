@@ -1,0 +1,29 @@
+{
+  "name": "automaton-prototype",
+  "version": "1.0.0",
+  "description": "简化版 AI Agent - 基础生存机制原型",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "test": "ts-node tests/basic.test.ts",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "ai-agent",
+    "automaton",
+    "survival"
+  ],
+  "author": "MOSS",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

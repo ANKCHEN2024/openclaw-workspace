@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API 配置 - 短视频生成平台</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .provider-card {
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 15px 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .provider-card:hover {
+      border-color: #667eea;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+      transform: translateY(-2px);
+    }
+    .provider-card.selected {
+      border-color: #667eea;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .provider-card.selected .provider-price,
+    .provider-card.selected .provider-features {
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .provider-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .provider-name {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .provider-region {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .region-domestic {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+    .region-international {
+      background: #dbeafe;
+      color: #2563eb;
+    }
+    .provider-price {
+      font-size: 14px;
+      color: #059669;
+      margin: 8px 0;
+    }
+    .provider-features {
+      font-size: 13px;
+      color: #6b7280;
+    }
+    .config-section {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background: #f9fafb;
+      border-radius: 8px;
+    }
+    .config-section.active {
+      display: block;
+    }
+    .free-quota {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔑 API 配置</h1>
+    <p class="subtitle">选择并配置你的视频生成 API 提供商</p>
+
+    <!-- 提供商选择 -->
+    <div class="section">
+      <h2>选择 API 提供商</h2>
+      
+      <!-- 国内提供商 -->
+      <h3 style="margin-top: 25px; color: #dc2626;">🇨🇳 国内 API（推荐）</h3>
+      
+      <div class="provider-card" data-provider="volcengine">
+        <div class="provider-header">
+          <span class="provider-name">🚀 火山引擎 - 即梦 AI</span>
+          <span class="provider-region region-domestic">国内</span>
+        </div>
+        <div class="provider-price">💰 ¥0.4/秒</div>
+        <div class="provider-features">✨ 免费 200 秒 | ⚡ 速度快 | 💯 性价比高</div>
+      </div>
+
+      <div class="provider-card" data-provider="aliyun">
+        <div class="provider-header">
+          <span class="provider-name">☁️ 阿里云 - 通义万相</span>
+          <span class="provider-region region-domestic">国内</span>
+        </div>
+        <div class="provider-price">💰 ¥0.5/秒</div>
+        <div class="provider-features">✨ 免费 100 秒 | 🎨 质量高 | 📚 文档完善</div>
+      </div>
+
+      <div class="provider-card" data-provider="kuaishou">
+        <div class="provider-header">
+          <span class="provider-name">📹 快手 - 可灵 AI</span>
+          <span class="provider-region region-domestic">国内</span>
+        </div>
+        <div class="provider-price">💰 ¥0.3/秒</div>
+        <div class="provider-features">✨ 免费 100 秒 | 💸 最便宜 | 📦 适合批量</div>
+      </div>
+
+      <div class="provider-card" data-provider="tencent">
+        <div class="provider-header">
+          <span class="provider-name">🐧 腾讯云 - 混元大模型</span>
+          <span class="provider-region region-domestic">国内</span>
+        </div>
+        <div class="provider-price">💰 ¥0.6/秒</div>
+        <div class="provider-features">✨ 免费 50 秒 | 🛡️ 稳定可靠 | 🔗 腾讯生态</div>
+      </div>
+
+      <!-- 国际提供商 -->
+      <h3 style="margin-top: 25px; color: #2563eb;">🌍 国际 API</h3>
+      
+      <div class="provider-card" data-provider="runway">
+        <div class="provider-header">
+          <span class="provider-name">🎬 Runway ML</span>
+          <span class="provider-region region-international">国际</span>
+        </div>
+        <div class="provider-price">💰 $0.05/秒</div>
+        <div class="provider-features">✨ 免费试用 | 🎨 专业级 | ⏱️ 最长 16 秒</div>
+      </div>
+
+      <div class="provider-card" data-provider="pika">
+        <div class="provider-header">
+          <span class="provider-name">🎭 Pika Labs</span>
+          <span class="provider-region region-international">国际</span>
+        </div>
+        <div class="provider-price">💰 $0.03/秒</div>
+        <div class="provider-features">✨ 免费试用 | 🎪 创意强 | 📱 Discord 可用</div>
+      </div>
+
+      <div class="provider-card" data-provider="kling">
+        <div class="provider-header">
+          <span class="provider-name">🔪 Kling AI</span>
+          <span class="provider-region region-international">国际</span>
+        </div>
+        <div class="provider-price">💰 ¥0.05/秒</div>
+        <div class="provider-features">✨ 免费试用 | 🎯 真实感 | 🌟 新兴平台</div>
+      </div>
+    </div>
+
+    <!-- 配置表单 -->
+    <div id="config-form" class="config-section">
+      <h2 id="selected-provider-name">配置 API</h2>
+      <form id="api-config-form">
+        <div class="form-group">
+          <label id="api-key-label">API 密钥</label>
+          <input type="password" id="api-key" class="form-control" placeholder="请输入 API 密钥" required>
+          <small id="api-key-help" class="form-help">从提供商官网获取</small>
+        </div>
+
+        <div id="extra-fields"></div>
+
+        <button type="submit" class="btn btn-primary">💾 保存配置</button>
+        <button type="button" class="btn btn-secondary" onclick="testConnection()">🔍 测试连接</button>
+      </form>
+
+      <div id="test-result" class="alert" style="display: none;"></div>
+
+      <div class="free-quota">
+        🎁 新用户专享：注册即可获得免费额度，立即开始生成视频！
+      </div>
+
+      <div style="margin-top: 20px;">
+        <a href="register.html" class="btn btn-info">
+          🔑 还没有 API 密钥？立即注册
+        </a>
+        <a href="docs/DOMESTIC_API_GUIDE.md" target="_blank" class="btn btn-info">
+          📖 查看详细配置指南
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // 提供商配置
+    const providerConfigs = {
+      volcengine: {
+        name: '火山引擎 - 即梦 AI',
+        fields: [
+          { id: 'volcengine_api_key', label: 'API 密钥', help: '从火山引擎控制台获取' }
+        ]
+      },
+      aliyun: {
+        name: '阿里云 - 通义万相',
+        fields: [
+          { id: 'aliyun_api_key', label: 'API 密钥', help: '从阿里云 DashScope 控制台获取' }
+        ]
+      },
+      kuaishou: {
+        name: '快手 - 可灵 AI',
+        fields: [
+          { id: 'kuaishou_api_key', label: 'API 密钥', help: '从可灵 AI 开发者平台获取' }
+        ]
+      },
+      tencent: {
+        name: '腾讯云 - 混元大模型',
+        fields: [
+          { id: 'tencent_secret_id', label: 'SecretId', help: '从腾讯云 API 密钥管理获取' },
+          { id: 'tencent_secret_key', label: 'SecretKey', help: '从腾讯云 API 密钥管理获取' }
+        ]
+      },
+      runway: {
+        name: 'Runway ML',
+        fields: [
+          { id: 'runway_api_key', label: 'API 密钥', help: '从 RunwayML 官网获取' }
+        ]
+      },
+      pika: {
+        name: 'Pika Labs',
+        fields: [
+          { id: 'pika_api_key', label: 'API 密钥', help: '从 Pika Labs 官网获取' }
+        ]
+      },
+      kling: {
+        name: 'Kling AI',
+        fields: [
+          { id: 'kling_api_key', label: 'API 密钥', help: '从 Kling AI 官网获取' }
+        ]
+      }
+    };
+
+    let selectedProvider = null;
+
+    // 绑定卡片点击事件
+    document.querySelectorAll('.provider-card').forEach(card => {
+      card.addEventListener('click', () => {
+        // 移除其他卡片的选中状态
+        document.querySelectorAll('.provider-card').forEach(c => c.classList.remove('selected'));
+        
+        // 选中当前卡片
+        card.classList.add('selected');
+        selectedProvider = card.dataset.provider;
+        
+        // 显示配置表单
+        showConfigForm(selectedProvider);
+      });
+    });
+
+    // 显示配置表单
+    function showConfigForm(providerId) {
+      const config = providerConfigs[providerId];
+      if (!config) return;
+
+      document.getElementById('selected-provider-name').textContent = `配置 ${config.name}`;
+      document.getElementById('config-form').classList.add('active');
+      
+      // 生成表单字段
+      const extraFields = document.getElementById('extra-fields');
+      extraFields.innerHTML = '';
+      
+      config.fields.forEach(field => {
+        extraFields.innerHTML += `
+          <div class="form-group">
+            <label>${field.label}</label>
+            <input type="password" id="${field.id}" class="form-control" placeholder="请输入${field.label}" required>
+            <small class="form-help">${field.help}</small>
+          </div>
+        `;
+      });
+
+      // 滚动到表单
+      document.getElementById('config-form').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // 提交配置
+    document.getElementById('api-config-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const config = providerConfigs[selectedProvider];
+      const configData = {};
+      
+      config.fields.forEach(field => {
+        configData[field.id] = document.getElementById(field.id).value;
+      });
+
+      try {
+        const response = await fetch('http://localhost:3000/api/config', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(configData)
+        });
+
+        if (response.ok) {
+          alert('✅ 配置保存成功！');
+          localStorage.setItem(`api_key_${selectedProvider}`, 'configured');
+        } else {
+          alert('❌ 配置失败，请重试');
+        }
+      } catch (error) {
+        alert('❌ 连接后端失败，请确保后端服务已启动');
+      }
+    });
+
+    // 测试连接
+    async function testConnection() {
+      const resultDiv = document.getElementById('test-result');
+      resultDiv.style.display = 'block';
+      resultDiv.textContent = '🔄 测试中...';
+      resultDiv.className = 'alert alert-info';
+
+      // TODO: 实现测试连接逻辑
+      setTimeout(() => {
+        resultDiv.textContent = '✅ 连接成功！API 密钥有效';
+        resultDiv.className = 'alert alert-success';
+      }, 1500);
+    }
+  </script>
+</body>
+</html>

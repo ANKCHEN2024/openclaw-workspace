@@ -1,0 +1,18 @@
+{
+  "agentName": "MyAutomaton",
+  "initialBalance": 1000,
+  "tickIntervalMs": 5000,
+  
+  "lowComputeThreshold": 500,
+  "criticalThreshold": 100,
+  "deadThreshold": 0,
+  
+  "thoughtCost": 1,
+  "actionCost": 5,
+  "observationCost": 2,
+  "apiCallCost": 10,
+  "fileOperationCost": 3,
+  
+  "dbPath": "./data/agent_state.db",
+  "logLevel": "info"
+}

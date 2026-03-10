@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>ai.openclaw.auto-skill-installer</string>
+    
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>~/.openclaw/extensions/auto-skill-installer/scripts/auto_install_daemon.py</string>
+        <string>--interval</string>
+        <string>24</string>
+        <string>--log</string>
+        <string>~/.openclaw/logs/auto-skill-installer.log</string>
+    </array>
+    
+    <key>RunAtLoad</key>
+    <true/>
+    
+    <key>KeepAlive</key>
+    <true/>
+    
+    <key>StandardOutPath</key>
+    <string>~/.openclaw/logs/auto-skill-installer.stdout</string>
+    
+    <key>StandardErrorPath</key>
+    <string>~/.openclaw/logs/auto-skill-installer.stderr</string>
+    
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+    
+    <key>WorkingDirectory</key>
+    <string>~/.openclaw/extensions</string>
+</dict>
+</plist>

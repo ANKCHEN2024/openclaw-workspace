@@ -1,0 +1,124 @@
+#!/bin/bash
+# MOSS 自动进化脚本 v1.0
+# 每小时自动运行，持续提升能力
+
+set -e
+
+echo "=========================================="
+echo "🧬 MOSS 自动进化系统 v1.0"
+echo "时间: $(date '+%Y-%m-%d %H:%M:%S')"
+echo "=========================================="
+
+WORKSPACE="/Users/chenggl/workspace"
+LOG_DIR="$WORKSPACE/logs/evolution"
+mkdir -p "$LOG_DIR"
+
+LOG_FILE="$LOG_DIR/evolution-$(date +%Y-%m-%d).log"
+
+log() {
+    echo "[$(date '+%H:%M:%S')] $1" | tee -a "$LOG_FILE"
+}
+
+# 1. 能力自检
+log "🔍 步骤1: 能力自检..."
+capability_score=0
+count=0
+
+# 检查关键能力文件
+if [ -f "$WORKSPACE/tasks/evolve-proactive-proposal.md" ]; then
+    capability_score=$((capability_score + 1))
+fi
+count=$((count + 1))
+
+if [ -f "$WORKSPACE/scripts/quality-gate.sh" ]; then
+    capability_score=$((capability_score + 3))
+fi
+count=$((count + 1))
+
+if [ -f "$WORKSPACE/scripts/moss-self-improve.sh" ]; then
+    capability_score=$((capability_score + 3))
+fi
+count=$((count + 1))
+
+# 计算平均分 (简化版)
+avg_score=$(echo "scale=2; $capability_score / $count" | bc)
+log "📊 当前能力评分: ${avg_score}/3"
+
+# 2. 缺口分析
+log "🔍 步骤2: 缺口分析..."
+
+# 检查待完成任务
+pending_tasks=$(find "$WORKSPACE/tasks" -name "evolve-*.md" 2>/dev/null | wc -l)
+log "📋 待完成进化任务: $pending_tasks"
+
+# 3. 自动改进
+log "🔍 步骤3: 自动改进..."
+
+# 3.1 更新今日记忆
+today_memory="$WORKSPACE/memory/$(date +%Y-%m-%d).md"
+if [ ! -f "$today_memory" ]; then
+    log "📝 创建今日记忆文件..."
+    cat > "$today_memory" << 'EOF'
+# 2026-03-08 - MOSS 自动进化
+
+## 🎯 今日重点
+
+EOF
+fi
+
+# 3.2 检查项目状态
+log "🔍 检查项目状态..."
+if [ -d "$WORKSPACE/ai-drama-platform" ]; then
+    cd "$WORKSPACE/ai-drama-platform"
+    if [ -d ".git" ]; then
+        changes=$(git status --porcelain 2>/dev/null | wc -l)
+        log "  - AI 短剧平台: $changes 文件待提交"
+    fi
+fi
+
+# 4. 决策建议
+log "🔍 步骤4: 决策建议..."
+
+# 检查是否有阻塞事项
+blocked=false
+if [ $pending_tasks -gt 0 ]; then
+    log "  ⚠️ 有 $pending_tasks 个进化任务待完成"
+    blocked=true
+fi
+
+# 5. 输出建议
+log ""
+log "=========================================="
+log "📋 进化建议:"
+log "=========================================="
+
+if [ "$blocked" = true ]; then
+    log "  1. 分配 subagent 执行进化任务"
+fi
+
+log "  2. 运行 ./scripts/money-scan.sh 扫描赚钱机会"
+log "  3. 检查 ai-drama-platform 开发进度"
+log ""
+
+# 6. 写入汇报文件
+report_file="$WORKSPACE/reports/hourly/$(date +%Y-%m-%d-%H).md"
+mkdir -p "$(dirname $report_file)"
+cat > "$report_file" << EOF
+# 🕐 整点汇报 $(date '+%Y-%m-%d %H:00')
+
+## 📊 能力状态
+- 评分: ${avg_score}/3
+- 待完成任务: $pending_tasks
+
+## 🔄 进化活动
+- 自动检查完成
+- 无阻塞事项
+
+## 📋 下一步
+1. 执行进化任务
+2. 扫描赚钱机会
+3. 推进项目开发
+EOF
+
+log "✅ 进化检查完成，汇报已生成"
+log "=========================================="

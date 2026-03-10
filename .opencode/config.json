@@ -1,0 +1,7 @@
+{
+  "provider": "openai-compatible",
+  "model": "qwen-coder-plus",
+  "apiEndpoint": "https://coding.dashscope.aliyuncs.com/v1",
+  "apiKey": "sk-sp-22c76c54ea07441983715fe928bb0a8d",
+  "providerName": "阿里云 DashScope Coding"
+}

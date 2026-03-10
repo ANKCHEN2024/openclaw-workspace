@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录 - 短视频生成平台</title>
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <style>
+    .auth-container {
+      max-width: 420px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+    
+    .auth-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .auth-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    
+    .auth-header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .auth-header p {
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    
+    .auth-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      background: var(--bg-secondary);
+      padding: 4px;
+      border-radius: var(--radius-md);
+    }
+    
+    .auth-tab {
+      flex: 1;
+      padding: 12px;
+      text-align: center;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: all 0.3s ease;
+    }
+    
+    .auth-tab.active {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .auth-form {
+      display: none;
+    }
+    
+    .auth-form.active {
+      display: block;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-md);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      font-size: 15px;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    
+    .btn-block {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    
+    .auth-footer {
+      text-align: center;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .auth-footer a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .auth-footer a:hover {
+      text-decoration: underline;
+    }
+    
+    .alert {
+      padding: 12px 16px;
+      border-radius: var(--radius-md);
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    
+    .alert-error {
+      background: #fee2e2;
+      color: #dc2626;
+      border: 1px solid #fecaca;
+    }
+    
+    .alert-success {
+      background: #d1fae5;
+      color: #059669;
+      border: 1px solid #a7f3d0;
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h1>🎬 短视频生成平台</h1>
+        <p>登录或注册开始创作</p>
+      </div>
+      
+      <div class="auth-tabs">
+        <div class="auth-tab active" data-tab="login">登录</div>
+        <div class="auth-tab" data-tab="register">注册</div>
+      </div>
+      
+      <!-- 登录表单 -->
+      <form id="login-form" class="auth-form active" onsubmit="return false;">
+        <div id="login-alert"></div>
+        
+        <div class="form-group">
+          <label class="form-label">用户名或邮箱</label>
+          <input type="text" id="login-username" class="form-input" placeholder="请输入用户名或邮箱">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">密码</label>
+          <input type="password" id="login-password" class="form-input" placeholder="请输入密码">
+        </div>
+        
+        <button type="button" id="login-btn" class="btn btn-primary btn-block">
+          <span class="btn-text">登录</span>
+        </button>
+      </form>
+      
+      <!-- 注册表单 -->
+      <form id="register-form" class="auth-form" onsubmit="return false;">
+        <div id="register-alert"></div>
+        
+        <div class="form-group">
+          <label class="form-label">用户名</label>
+          <input type="text" id="register-username" class="form-input" placeholder="请输入用户名">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">邮箱</label>
+          <input type="text" id="register-email" class="form-input" placeholder="请输入邮箱">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">密码</label>
+          <input type="password" id="register-password" class="form-input" placeholder="至少6位字符">
+        </div>
+        
+        <button type="button" id="register-btn" class="btn btn-primary btn-block">
+          <span class="btn-text">注册</span>
+        </button>
+      </form>
+      
+      <div class="auth-footer">
+        <p>无需登录也可 <a href="index.html">先试用</a></p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/auth.js?v=2"></script>
+  <script>
+    // 标签切换
+    const tabs = document.querySelectorAll('.auth-tab');
+    const forms = document.querySelectorAll('.auth-form');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        
+        tabs.forEach(t => t.classList.remove('active'));
+        forms.forEach(f => f.classList.remove('active'));
+        
+        tab.classList.add('active');
+        document.getElementById(`${target}-form`).classList.add('active');
+      });
+    });
+
+    // 显示提示
+    function showAlert(type, message, formId) {
+      const alertEl = document.getElementById(`${formId}-alert`);
+      alertEl.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+      
+      setTimeout(() => {
+        alertEl.innerHTML = '';
+      }, 5000);
+    }
+
+    // 设置按钮加载状态
+    function setButtonLoading(btn, loading) {
+      const text = btn.querySelector('.btn-text');
+      if (loading) {
+        btn.disabled = true;
+        text.innerHTML = '<span class="loading-spinner" style="width: 16px; height: 16px; border-width: 2px; display: inline-block; vertical-align: middle; margin-right: 8px;"></span> 处理中...';
+      } else {
+        btn.disabled = false;
+        text.textContent = btn.id === 'login-btn' ? '登录' : '注册';
+      }
+    }
+
+    // 登录按钮点击
+    document.getElementById('login-btn').addEventListener('click', async () => {
+      const username = document.getElementById('login-username').value.trim();
+      const password = document.getElementById('login-password').value;
+      const btn = document.getElementById('login-btn');
+      
+      if (!username || !password) {
+        showAlert('error', '请填写用户名和密码', 'login');
+        return;
+      }
+      
+      setButtonLoading(btn, true);
+      
+      try {
+        await Auth.login(username, password);
+        showAlert('success', '登录成功，正在跳转...', 'login');
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 1000);
+      } catch (error) {
+        showAlert('error', error.message || '登录失败，请检查用户名和密码', 'login');
+        setButtonLoading(btn, false);
+      }
+    });
+
+    // 注册按钮点击
+    document.getElementById('register-btn').addEventListener('click', async () => {
+      const username = document.getElementById('register-username').value.trim();
+      const email = document.getElementById('register-email').value.trim();
+      const password = document.getElementById('register-password').value;
+      const btn = document.getElementById('register-btn');
+      
+      if (!username || !email || !password) {
+        showAlert('error', '请填写所有字段', 'register');
+        return;
+      }
+      
+      if (password.length < 6) {
+        showAlert('error', '密码至少需要6位字符', 'register');
+        return;
+      }
+      
+      setButtonLoading(btn, true);
+      
+      try {
+        await Auth.register(username, email, password);
+        showAlert('success', '注册成功，正在跳转...', 'register');
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 1000);
+      } catch (error) {
+        showAlert('error', error.message || '注册失败', 'register');
+        setButtonLoading(btn, false);
+      }
+    });
+
+    // 如果已登录，跳转到首页
+    if (Auth.isLoggedIn()) {
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>

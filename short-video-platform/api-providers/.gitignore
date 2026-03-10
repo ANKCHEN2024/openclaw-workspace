@@ -1,0 +1,48 @@
+# 依赖
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# 构建输出
+dist/
+build/
+*.js.map
+*.d.ts.map
+
+# 环境变量（包含 API 密钥）
+.env
+.env.local
+.env.*.local
+
+# 输出文件
+output/
+*.mp4
+*.avi
+*.mov
+*.webm
+
+# 日志
+logs/
+*.log
+npm-debug.log*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 测试
+coverage/
+.nyc_output/
+
+# 临时文件
+tmp/
+temp/
+.cache/
