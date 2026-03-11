@@ -1,0 +1,26 @@
+# Agent Workflow Demo 依赖
+
+# LLM
+openai>=1.0.0
+dashscope>=1.0.0  # 阿里云通义千问
+
+# 图像处理
+Pillow>=10.0.0
+requests>=2.31.0
+
+# 视频处理
+# ffmpeg-python>=0.2.0  # 可选，如需本地视频处理
+
+# 并发
+concurrent-futures>=3.11.0
+
+# 配置管理
+python-dotenv>=1.0.0
+
+# 测试
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# 开发工具
+black>=23.0.0
+flake8>=6.0.0
