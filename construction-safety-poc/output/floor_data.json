@@ -1,0 +1,252 @@
+{
+  "floor_id": "F001",
+  "floor_name": "一层平面图",
+  "floor_number": 1,
+  "dimensions": {
+    "width": 50.0,
+    "height": 30.0
+  },
+  "walls": [
+    {
+      "id": "W001",
+      "start_x": 0,
+      "start_y": 0,
+      "end_x": 50,
+      "end_y": 0,
+      "thickness": 0.2,
+      "height": 3.0,
+      "layer": "墙体"
+    },
+    {
+      "id": "W002",
+      "start_x": 50,
+      "start_y": 0,
+      "end_x": 50,
+      "end_y": 30,
+      "thickness": 0.2,
+      "height": 3.0,
+      "layer": "墙体"
+    },
+    {
+      "id": "W003",
+      "start_x": 50,
+      "start_y": 30,
+      "end_x": 0,
+      "end_y": 30,
+      "thickness": 0.2,
+      "height": 3.0,
+      "layer": "墙体"
+    },
+    {
+      "id": "W004",
+      "start_x": 0,
+      "start_y": 30,
+      "end_x": 0,
+      "end_y": 0,
+      "thickness": 0.2,
+      "height": 3.0,
+      "layer": "墙体"
+    },
+    {
+      "id": "W005",
+      "start_x": 15,
+      "start_y": 0,
+      "end_x": 15,
+      "end_y": 30,
+      "thickness": 0.15,
+      "height": 3.0,
+      "layer": "内墙"
+    },
+    {
+      "id": "W006",
+      "start_x": 35,
+      "start_y": 0,
+      "end_x": 35,
+      "end_y": 30,
+      "thickness": 0.15,
+      "height": 3.0,
+      "layer": "内墙"
+    },
+    {
+      "id": "W007",
+      "start_x": 0,
+      "start_y": 18,
+      "end_x": 50,
+      "end_y": 18,
+      "thickness": 0.15,
+      "height": 3.0,
+      "layer": "内墙"
+    }
+  ],
+  "doors": [
+    {
+      "id": "D001",
+      "center_x": 25,
+      "center_y": 0,
+      "width": 1.2,
+      "height": 2.1,
+      "rotation": 0,
+      "wall_id": "W001"
+    },
+    {
+      "id": "D002",
+      "center_x": 50,
+      "center_y": 15,
+      "width": 1.0,
+      "height": 2.1,
+      "rotation": 90,
+      "wall_id": "W002"
+    },
+    {
+      "id": "D003",
+      "center_x": 15,
+      "center_y": 18,
+      "width": 1.0,
+      "height": 2.1,
+      "rotation": 0,
+      "wall_id": "W007"
+    },
+    {
+      "id": "D004",
+      "center_x": 35,
+      "center_y": 18,
+      "width": 1.0,
+      "height": 2.1,
+      "rotation": 0,
+      "wall_id": "W007"
+    }
+  ],
+  "windows": [
+    {
+      "id": "WIN001",
+      "center_x": 10,
+      "center_y": 0,
+      "width": 1.5,
+      "height": 1.5,
+      "wall_id": "W001"
+    },
+    {
+      "id": "WIN002",
+      "center_x": 40,
+      "center_y": 0,
+      "width": 1.5,
+      "height": 1.5,
+      "wall_id": "W001"
+    },
+    {
+      "id": "WIN003",
+      "center_x": 50,
+      "center_y": 10,
+      "width": 1.5,
+      "height": 1.5,
+      "wall_id": "W002"
+    },
+    {
+      "id": "WIN004",
+      "center_x": 50,
+      "center_y": 20,
+      "width": 1.5,
+      "height": 1.5,
+      "wall_id": "W002"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "R001",
+      "name": "材料堆放区",
+      "area": 270,
+      "polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          15,
+          0
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          0,
+          18
+        ]
+      ],
+      "floor": 1
+    },
+    {
+      "id": "R002",
+      "name": "加工区",
+      "area": 360,
+      "polygon": [
+        [
+          15,
+          0
+        ],
+        [
+          35,
+          0
+        ],
+        [
+          35,
+          18
+        ],
+        [
+          15,
+          18
+        ]
+      ],
+      "floor": 1
+    },
+    {
+      "id": "R003",
+      "name": "办公区",
+      "area": 270,
+      "polygon": [
+        [
+          35,
+          0
+        ],
+        [
+          50,
+          0
+        ],
+        [
+          50,
+          18
+        ],
+        [
+          35,
+          18
+        ]
+      ],
+      "floor": 1
+    },
+    {
+      "id": "R004",
+      "name": "设备区",
+      "area": 600,
+      "polygon": [
+        [
+          0,
+          18
+        ],
+        [
+          50,
+          18
+        ],
+        [
+          50,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ],
+      "floor": 1
+    }
+  ],
+  "export_time": "2026-03-11T14:35:18.165583"
+}

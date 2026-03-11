@@ -1,0 +1,59 @@
+{
+  "floor_id": "F001",
+  "total_cameras": 5,
+  "coverage_rate": 100.0,
+  "cameras": [
+    {
+      "id": "CAM001",
+      "type": "枪机",
+      "x": 25,
+      "y": -2,
+      "height": 2.5,
+      "fov": 70,
+      "range": 8,
+      "rotation": 0
+    },
+    {
+      "id": "CAM002",
+      "type": "球机",
+      "x": 5,
+      "y": 5,
+      "height": 5,
+      "fov": 90,
+      "range": 25,
+      "rotation": 45
+    },
+    {
+      "id": "CAM003",
+      "type": "球机",
+      "x": 45,
+      "y": 5,
+      "height": 5,
+      "fov": 90,
+      "range": 25,
+      "rotation": 135
+    },
+    {
+      "id": "CAM004",
+      "type": "球机",
+      "x": 45,
+      "y": 25,
+      "height": 5,
+      "fov": 90,
+      "range": 25,
+      "rotation": 225
+    },
+    {
+      "id": "CAM005",
+      "type": "球机",
+      "x": 5,
+      "y": 25,
+      "height": 5,
+      "fov": 90,
+      "range": 25,
+      "rotation": 315
+    }
+  ],
+  "blind_zones_count": 0,
+  "report_time": "2026-03-11T14:35:18.166607"
+}

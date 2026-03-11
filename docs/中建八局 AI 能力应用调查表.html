@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中建八局 AI 能力应用调查表</title>
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 2cm;
+            }
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #333;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #1e40af;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            color: #1e40af;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .header .subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .header .info {
+            font-size: 12px;
+            color: #888;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1e40af;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        
+        .subsection {
+            margin-bottom: 15px;
+        }
+        
+        .subsection-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            border-left: 3px solid #667eea;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            font-size: 11px;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9fafb;
+        }
+        
+        tr:hover {
+            background: #f3f4f6;
+        }
+        
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: #667eea;
+        }
+        
+        .input-line {
+            border: none;
+            border-bottom: 1px dashed #999;
+            padding: 5px;
+            width: 100%;
+            font-size: 12px;
+            background: transparent;
+        }
+        
+        .textarea-box {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            min-height: 60px;
+            background: #fafafa;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #1e40af;
+            text-align: center;
+            font-size: 11px;
+            color: #666;
+        }
+        
+        .company-info {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            border-left: 4px solid #1e40af;
+        }
+        
+        .company-info h3 {
+            color: #1e40af;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .company-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .company-info li {
+            padding: 3px 0;
+            font-size: 11px;
+        }
+        
+        .company-info li::before {
+            content: "✅ ";
+        }
+        
+        .page-break {
+            page-break-before: always;
+        }
+        
+        .signature-area {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        
+        .signature-box {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 20px;
+            background: #fafafa;
+        }
+        
+        .signature-box h4 {
+            color: #1e40af;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+        
+        .signature-line {
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+        
+        .signature-line .label {
+            font-weight: bold;
+            display: inline-block;
+            width: 80px;
+        }
+        
+        .signature-space {
+            border-bottom: 1px solid #999;
+            height: 30px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 封面页 -->
+    <div class="header">
+        <h1>中建八局 AI 能力应用调查表</h1>
+        <p class="subtitle">中国建筑第八工程局有限公司</p>
+        <p class="info">调查日期：2026 年 3 月 | 版本号：v1.0</p>
+    </div>
+    
+    <div class="section">
+        <div class="subsection">
+            <p style="margin-bottom: 15px; text-align: justify;">
+                <strong>调查目的：</strong>了解 AI 技术在建筑施工场景的应用现状与需求，为中建八局定制数字化解决方案，助力数字化转型与智能化升级。
+            </p>
+            <p style="margin-bottom: 15px; text-align: justify;">
+                <strong>填写说明：</strong>请根据贵单位实际情况如实填写，本调查表仅用于方案定制，我们将严格保密所有信息。
+            </p>
+        </div>
+    </div>
+
+    <!-- 第一部分 -->
+    <div class="section">
+        <div class="section-title">一、基本信息</div>
+        <table>
+            <tr>
+                <th style="width: 25%;">单位名称</th>
+                <td><div class="signature-space"></div></td>
+            </tr>
+            <tr>
+                <th>所属分公司/项目部</th>
+                <td><div class="signature-space"></div></td>
+            </tr>
+            <tr>
+                <th>填表人姓名</th>
+                <td><div class="signature-space"></div></td>
+            </tr>
+            <tr>
+                <th>职务/岗位</th>
+                <td><div class="signature-space"></div></td>
+            </tr>
+            <tr>
+                <th>联系电话</th>
+                <td><div class="signature-space"></div></td>
+            </tr>
+            <tr>
+                <th>电子邮箱</th>
+                <td><div class="signature-space"></div></td>
+            </tr>
+            <tr>
+                <th>填表日期</th>
+                <td><div class="signature-space"></div></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 第二部分 -->
+    <div class="section">
+        <div class="section-title">二、项目基本情况</div>
+        
+        <div class="subsection">
+            <div class="subsection-title">2.1 项目类型（可多选）</div>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox"> 公共建筑（办公楼、酒店、会展中心等）</div>
+                <div class="checkbox-item"><input type="checkbox"> 住宅建筑（商品房、保障房、公寓等）</div>
+                <div class="checkbox-item"><input type="checkbox"> 工业建筑（厂房、仓库、研发中心等）</div>
+                <div class="checkbox-item"><input type="checkbox"> 基础设施（道路、桥梁、隧道、地铁等）</div>
+                <div class="checkbox-item"><input type="checkbox"> 市政公用（水厂、电厂、管网等）</div>
+                <div class="checkbox-item"><input type="checkbox"> 其他：____________</div>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">2.2 项目规模</div>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox"> 小型（&lt;1 万㎡或&lt;5000 万）</div>
+                <div class="checkbox-item"><input type="checkbox"> 中型（1-5 万㎡或 5000 万 -2 亿）</div>
+                <div class="checkbox-item"><input type="checkbox"> 大型（5-10 万㎡或 2 亿 -10 亿）</div>
+                <div class="checkbox-item"><input type="checkbox"> 特大型（&gt;10 万㎡或&gt;10 亿）</div>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">2.3 项目周期</div>
+            <table>
+                <tr>
+                    <th style="width: 25%;">开工日期</th>
+                    <td><div class="signature-space"></div></td>
+                </tr>
+                <tr>
+                    <th>计划竣工日期</th>
+                    <td><div class="signature-space"></div></td>
+                </tr>
+                <tr>
+                    <th>当前进度</th>
+                    <td><div class="signature-space"></div></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- 第三部分 -->
+    <div class="section">
+        <div class="section-title">三、AI 技术应用现状</div>
+        
+        <div class="subsection">
+            <div class="subsection-title">3.1 已应用的 AI 技术（可多选）</div>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox"> 智能视频监控（安全帽检测、危险区域识别）</div>
+                <div class="checkbox-item"><input type="checkbox"> 无人机巡检（进度拍摄、地形测绘）</div>
+                <div class="checkbox-item"><input type="checkbox"> BIM+AI 集成（碰撞检测、工程量计算）</div>
+                <div class="checkbox-item"><input type="checkbox"> 智能安全帽（定位、生命体征监测）</div>
+                <div class="checkbox-item"><input type="checkbox"> 机器人施工（砌砖、焊接、喷涂）</div>
+                <div class="checkbox-item"><input type="checkbox"> AI 质检（裂缝识别、钢筋检测）</div>
+                <div class="checkbox-item"><input type="checkbox"> 进度预测（工期预测、风险预警）</div>
+                <div class="checkbox-item"><input type="checkbox"> 成本管控（材料预测、成本分析）</div>
+                <div class="checkbox-item"><input type="checkbox"> 安全管理（隐患排查、事故预测）</div>
+                <div class="checkbox-item"><input type="checkbox"> 文档管理（智能归档、合同审查）</div>
+                <div class="checkbox-item"><input type="checkbox"> 未应用任何 AI 技术</div>
+                <div class="checkbox-item"><input type="checkbox"> 其他：____________</div>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">3.2 应用效果评估</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">应用技术</th>
+                        <th style="width: 25%;">使用频率</th>
+                        <th style="width: 25%;">满意度 (1-5 分)</th>
+                        <th style="width: 25%;">主要问题</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>智能视频监控</td>
+                        <td>□每日 □每周 □偶尔</td>
+                        <td>□1 □2 □3 □4 □5</td>
+                        <td><div class="signature-space" style="height: 20px;"></div></td>
+                    </tr>
+                    <tr>
+                        <td>无人机巡检</td>
+                        <td>□每日 □每周 □偶尔</td>
+                        <td>□1 □2 □3 □4 □5</td>
+                        <td><div class="signature-space" style="height: 20px;"></div></td>
+                    </tr>
+                    <tr>
+                        <td>BIM+AI 集成</td>
+                        <td>□每日 □每周 □偶尔</td>
+                        <td>□1 □2 □3 □4 □5</td>
+                        <td><div class="signature-space" style="height: 20px;"></div></td>
+                    </tr>
+                    <tr>
+                        <td>智能安全帽</td>
+                        <td>□每日 □每周 □偶尔</td>
+                        <td>□1 □2 □3 □4 □5</td>
+                        <td><div class="signature-space" style="height: 20px;"></div></td>
+                    </tr>
+                    <tr>
+                        <td>机器人施工</td>
+                        <td>□每日 □每周 □偶尔</td>
+                        <td>□1 □2 □3 □4 □5</td>
+                        <td><div class="signature-space" style="height: 20px;"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">3.3 投资情况</div>
+            <table>
+                <tr>
+                    <th style="width: 30%;">年度 AI 技术投入预算</th>
+                    <td>____________万元</td>
+                </tr>
+                <tr>
+                    <th>已投入金额</th>
+                    <td>____________万元</td>
+                </tr>
+                <tr>
+                    <th>投入占比（占项目总成本）</th>
+                    <td>____%</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- 第四部分 -->
+    <div class="section">
+        <div class="section-title">四、核心痛点与需求</div>
+        
+        <div class="subsection">
+            <div class="subsection-title">4.1 当前面临的主要挑战（请按优先级排序 1-5）</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">挑战</th>
+                        <th style="width: 20%;">优先级</th>
+                        <th style="width: 50%;">具体问题描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>安全监管不到位</td>
+                        <td>□1 □2 □3 □4 □5</td>
+                        <td><div class="signature-space" style="height: 20px;"></div></td>
+                    </tr>
+                    <tr>
+                        <td>进度控制困难</td>
+                        <td>□1 □2 □3 □4 □5</td>
+                        <td><div class="signature-space" style="height: 20px;"></div></td>
+                    </tr>
+                    <tr>
+                        <td>成本超支严重</td>
+                        <td>□1 □2 □3 □4 □5</td>
+                        <td><div class="signature-space" style="height: 20px;"></div></td>
+                    </tr>
+                    <tr>
+                        <td>质量问题频发</td>
+                        <td>□1 □2 □3 □4 □5</td>
+                        <td><div class="signature-space" style="height: 20px;"></div></td>
+                    </tr>
+                    <tr>
+                        <td>人员管理复杂</td>
+                        <td>□1 □2 □3 □4 □5</td>
+                        <td><div class="signature-space" style="height: 20px;"></div></td>
+                    </tr>
+                    <tr>
+                        <td>文档资料混乱</td>
+                        <td>□1 □2 □3 □4 □5</td>
+                        <td><div class="signature-space" style="height: 20px;"></div></td>
+                    </tr>
+                    <tr>
+                        <td>沟通协调低效</td>
+                        <td>□1 □2 □3 □4 □5</td>
+                        <td><div class="signature-space" style="height: 20px;"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">4.2 最希望 AI 解决的 3 个问题</div>
+            <div class="textarea-box" style="min-height: 80px;">1. ________________________________________________</div>
+            <div class="textarea-box" style="min-height: 80px;">2. ________________________________________________</div>
+            <div class="textarea-box" style="min-height: 80px;">3. ________________________________________________</div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">4.3 期望的 AI 功能</div>
+            
+            <p style="font-weight: bold; margin: 10px 0; color: #1e40af;">安全管理</p>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox"> 实时危险行为识别</div>
+                <div class="checkbox-item"><input type="checkbox"> 高风险区域自动预警</div>
+                <div class="checkbox-item"><input type="checkbox"> 事故隐患智能排查</div>
+                <div class="checkbox-item"><input type="checkbox"> 应急预案自动生成</div>
+                <div class="checkbox-item"><input type="checkbox"> 安全培训个性化推荐</div>
+            </div>
+            
+            <p style="font-weight: bold; margin: 10px 0; color: #1e40af;">进度管理</p>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox"> 基于图像的进度自动识别</div>
+                <div class="checkbox-item"><input type="checkbox"> 工期预测与风险预警</div>
+                <div class="checkbox-item"><input type="checkbox"> 关键路径智能优化</div>
+                <div class="checkbox-item"><input type="checkbox"> 资源调度自动建议</div>
+                <div class="checkbox-item"><input type="checkbox"> 进度报告自动生成</div>
+            </div>
+            
+            <p style="font-weight: bold; margin: 10px 0; color: #1e40af;">质量管理</p>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox"> 混凝土裂缝自动识别</div>
+                <div class="checkbox-item"><input type="checkbox"> 钢筋间距智能检测</div>
+                <div class="checkbox-item"><input type="checkbox"> 墙面平整度 AI 测量</div>
+                <div class="checkbox-item"><input type="checkbox"> 材料质量智能验收</div>
+                <div class="checkbox-item"><input type="checkbox"> 质量问题追溯分析</div>
+            </div>
+            
+            <p style="font-weight: bold; margin: 10px 0; color: #1e40af;">成本管控</p>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox"> 材料用量精准预测</div>
+                <div class="checkbox-item"><input type="checkbox"> 成本偏差实时预警</div>
+                <div class="checkbox-item"><input type="checkbox"> 变更影响智能评估</div>
+                <div class="checkbox-item"><input type="checkbox"> 结算数据自动核对</div>
+                <div class="checkbox-item"><input type="checkbox"> 成本优化方案推荐</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第五部分 -->
+    <div class="section">
+        <div class="section-title">五、数字孪生需求</div>
+        
+        <div class="subsection">
+            <div class="subsection-title">5.1 对数字孪生技术的了解程度</div>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox"> 非常了解，已有应用</div>
+                <div class="checkbox-item"><input type="checkbox"> 基本了解，但未应用</div>
+                <div class="checkbox-item"><input type="checkbox"> 听说过，但不了解</div>
+                <div class="checkbox-item"><input type="checkbox"> 完全不了解</div>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">5.2 数字孪生应用场景兴趣（可多选）</div>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox"> 三维可视化指挥（项目全景漫游）</div>
+                <div class="checkbox-item"><input type="checkbox"> 实时数据驾驶舱（进度/质量/安全/成本）</div>
+                <div class="checkbox-item"><input type="checkbox"> 施工过程仿真（工序模拟、冲突预演）</div>
+                <div class="checkbox-item"><input type="checkbox"> 设备远程监控（塔吊、升降机、盾构机）</div>
+                <div class="checkbox-item"><input type="checkbox"> 环境智能监测（扬尘、噪音、温湿度）</div>
+                <div class="checkbox-item"><input type="checkbox"> 应急演练模拟（火灾、坍塌等事故）</div>
+                <div class="checkbox-item"><input type="checkbox"> 运维管理（竣工后设备维护、能耗）</div>
+                <div class="checkbox-item"><input type="checkbox"> 其他：____________</div>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">5.3 可接受的投资范围</div>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox"> &lt;50 万</div>
+                <div class="checkbox-item"><input type="checkbox"> 50-100 万</div>
+                <div class="checkbox-item"><input type="checkbox"> 100-200 万</div>
+                <div class="checkbox-item"><input type="checkbox"> 200-500 万</div>
+                <div class="checkbox-item"><input type="checkbox"> &gt;500 万</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第六部分 -->
+    <div class="section">
+        <div class="section-title">六、AI 大模型需求</div>
+        
+        <div class="subsection">
+            <div class="subsection-title">6.1 对 AI 大模型的了解程度</div>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox"> 非常了解，已有应用</div>
+                <div class="checkbox-item"><input type="checkbox"> 基本了解，但未应用</div>
+                <div class="checkbox-item"><input type="checkbox"> 听说过，但不了解</div>
+                <div class="checkbox-item"><input type="checkbox"> 完全不了解</div>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">6.2 大模型应用场景兴趣（可多选）</div>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox"> 智能问答助手（规范查询、技术问题）</div>
+                <div class="checkbox-item"><input type="checkbox"> 施工方案自动生成</div>
+                <div class="checkbox-item"><input type="checkbox"> 合同智能审查（风险条款识别）</div>
+                <div class="checkbox-item"><input type="checkbox"> 会议纪要自动生成</div>
+                <div class="checkbox-item"><input type="checkbox"> 培训材料自动生成（安全/技术交底）</div>
+                <div class="checkbox-item"><input type="checkbox"> 智能客服（劳务咨询、供应商对接）</div>
+                <div class="checkbox-item"><input type="checkbox"> 代码/脚本生成（自动化报表）</div>
+                <div class="checkbox-item"><input type="checkbox"> 多语言翻译（涉外项目）</div>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">6.3 部署方式偏好</div>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox"> 公有云（成本低，快速上线）</div>
+                <div class="checkbox-item"><input type="checkbox"> 私有化部署（数据安全，定制化）</div>
+                <div class="checkbox-item"><input type="checkbox"> 混合部署（核心私有 + 通用公有）</div>
+                <div class="checkbox-item"><input type="checkbox"> 不确定，需专业建议</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- 第七部分 -->
+    <div class="section">
+        <div class="section-title">七、合作意向</div>
+        
+        <div class="subsection">
+            <div class="subsection-title">7.1 是否愿意参与 AI 应用试点项目</div>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox"> 非常愿意，可立即启动</div>
+                <div class="checkbox-item"><input type="checkbox"> 有意向，需进一步沟通</div>
+                <div class="checkbox-item"><input type="checkbox"> 暂不考虑，观望中</div>
+                <div class="checkbox-item"><input type="checkbox"> 无兴趣</div>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">7.2 可提供的支持（可多选）</div>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox"> 提供真实业务场景</div>
+                <div class="checkbox-item"><input type="checkbox"> 提供历史数据用于模型训练</div>
+                <div class="checkbox-item"><input type="checkbox"> 安排专人配合开发</div>
+                <div class="checkbox-item"><input type="checkbox"> 参与产品测试与反馈</div>
+                <div class="checkbox-item"><input type="checkbox"> 联合申报科研课题</div>
+                <div class="checkbox-item"><input type="checkbox"> 其他：____________</div>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">7.3 期望的合作模式</div>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox"> 采购成熟产品</div>
+                <div class="checkbox-item"><input type="checkbox"> 定制化开发</div>
+                <div class="checkbox-item"><input type="checkbox"> 联合研发</div>
+                <div class="checkbox-item"><input type="checkbox"> 技术咨询服务</div>
+                <div class="checkbox-item"><input type="checkbox"> 其他：____________</div>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">7.4 决策流程</div>
+            <table>
+                <tr>
+                    <th style="width: 25%;">决策链条</th>
+                    <td><div class="signature-space"></div></td>
+                </tr>
+                <tr>
+                    <th>决策周期</th>
+                    <td>约____个月</td>
+                </tr>
+                <tr>
+                    <th>关键决策人</th>
+                    <td>____________（职务）</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- 第八部分 -->
+    <div class="section">
+        <div class="section-title">八、其他建议</div>
+        
+        <div class="subsection">
+            <div class="subsection-title">8.1 对 AI 技术在建筑行业应用的建议</div>
+            <div class="textarea-box" style="min-height: 80px;"></div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">8.2 希望谷风科技提供的支持</div>
+            <div class="textarea-box" style="min-height: 80px;"></div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">8.3 其他补充说明</div>
+            <div class="textarea-box" style="min-height: 80px;"></div>
+        </div>
+    </div>
+
+    <!-- 第九部分 -->
+    <div class="section">
+        <div class="section-title">九、后续跟进</div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 30%;">跟进事项</th>
+                    <th style="width: 20%;">负责人</th>
+                    <th style="width: 25%;">计划时间</th>
+                    <th style="width: 25%;">完成情况</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>初步方案沟通</td>
+                    <td><div class="signature-space" style="height: 20px;"></div></td>
+                    <td><div class="signature-space" style="height: 20px;"></div></td>
+                    <td><div class="signature-space" style="height: 20px;"></div></td>
+                </tr>
+                <tr>
+                    <td>需求调研</td>
+                    <td><div class="signature-space" style="height: 20px;"></div></td>
+                    <td><div class="signature-space" style="height: 20px;"></div></td>
+                    <td><div class="signature-space" style="height: 20px;"></div></td>
+                </tr>
+                <tr>
+                    <td>方案演示</td>
+                    <td><div class="signature-space" style="height: 20px;"></div></td>
+                    <td><div class="signature-space" style="height: 20px;"></div></td>
+                    <td><div class="signature-space" style="height: 20px;"></div></td>
+                </tr>
+                <tr>
+                    <td>商务谈判</td>
+                    <td><div class="signature-space" style="height: 20px;"></div></td>
+                    <td><div class="signature-space" style="height: 20px;"></div></td>
+                    <td><div class="signature-space" style="height: 20px;"></div></td>
+                </tr>
+                <tr>
+                    <td>合同签订</td>
+                    <td><div class="signature-space" style="height: 20px;"></div></td>
+                    <td><div class="signature-space" style="height: 20px;"></div></td>
+                    <td><div class="signature-space" style="height: 20px;"></div></td>
+                </tr>
+                <tr>
+                    <td>项目启动</td>
+                    <td><div class="signature-space" style="height: 20px;"></div></td>
+                    <td><div class="signature-space" style="height: 20px;"></div></td>
+                    <td><div class="signature-space" style="height: 20px;"></div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 公司信息 -->
+    <div class="company-info">
+        <h3>🏢 谷风科技 - AI+ 数字孪生解决方案提供商</h3>
+        <ul>
+            <li>AI+ 数字孪生整体解决方案</li>
+            <li>建筑施工场景深度定制</li>
+            <li>大模型应用开发</li>
+            <li>三维可视化与实时数据集成</li>
+            <li>私有化部署与数据安全</li>
+        </ul>
+        <p style="margin-top: 15px; font-size: 12px;">
+            <strong>联系方式：</strong>程广磊（总经理） | 电话：____________ | 邮箱：____________<br>
+            <strong>公司地址：</strong>陕西省西安市 | 官网：www.gufengtech.com
+        </p>
+    </div>
+
+    <!-- 签名区 -->
+    <div class="signature-area">
+        <div class="signature-box">
+            <h4>📋 填表人确认</h4>
+            <div class="signature-line">
+                <span class="label">姓名：</span>
+                <div class="signature-space"></div>
+            </div>
+            <div class="signature-line">
+                <span class="label">日期：</span>
+                <div class="signature-space"></div>
+            </div>
+            <div class="signature-line">
+                <span class="label">签字：</span>
+                <div class="signature-space"></div>
+            </div>
+        </div>
+        <div class="signature-box">
+            <h4>✅ 谷风科技接收</h4>
+            <div class="signature-line">
+                <span class="label">接收人：</span>
+                <div class="signature-space"></div>
+            </div>
+            <div class="signature-line">
+                <span class="label">日期：</span>
+                <div class="signature-space"></div>
+            </div>
+            <div class="signature-line">
+                <span class="label">盖章：</span>
+                <div class="signature-space"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+        <p>感谢贵单位参与本次调查！我们将根据反馈定制专属 AI 解决方案，助力中建八局数字化转型。</p>
+        <p style="margin-top: 10px;">调查日期：2026 年 3 月 11 日 | 版本号：v1.0 | 第 1 页 共 1 页</p>
+    </div>
+</body>
+</html>
